@@ -21,12 +21,6 @@
                         <fileset>
                             <directory>build</directory>
                         </fileset>
-                        <fileset>
-                            <directory>node</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>node_modules</directory>
-                        </fileset>
                     </filesets>
                 </configuration>
             </plugin>
@@ -89,4 +83,30 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>full-clean</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>build</directory>
+                                </fileset>
+                                <fileset>
+                                    <directory>node</directory>
+                                </fileset>
+                                <fileset>
+                                    <directory>node_modules</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
